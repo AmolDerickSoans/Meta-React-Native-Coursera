@@ -1,14 +1,5 @@
-# Meta-React-Native-Coursera
-Code samples and solutions for the react native professional certification course available on coursera
+## Little Lemon
 
+This is the code example for the newsletter subscription application.
 
-
-
-## How to use
-
-- change branch to course name
-
-## How to  contribute
-- Make a PR to respective branch and I'll merge it
-
-
+![](little_lemon.gif)
