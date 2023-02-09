@@ -9,6 +9,7 @@ Code samples and solutions for the react native professional certification cours
 - change branch to course name
 
 ## How to  contribute
+- Fork repo
 - Make a PR to respective branch and I'll merge it
 
 
