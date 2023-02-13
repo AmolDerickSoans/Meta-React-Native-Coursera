@@ -1,32 +1,32 @@
-import { StyleSheet, Text, View } from 'react-native';
-import OnBoardingScreen from './screens/OnBoardingScreen';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import React from "react";
+import { StyleSheet, Text, View } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+//Screens
+import LoginScreen from "./components/LoginScreen";
+import MenuScreen from "./components/MenuScreen";
+import SplashScreen from "./components/SplashScreen";
+import SubscribeScreen from "./components/SubscribeScreen";
+import LittleLemonHeader from "./components/LittleLemonHeader";
+import LittleLemonFooter from "./components/LittleLemonFooter";
 
-//screen imports
-import {ProfileScreen} from './screens/ProfileScreen';
-import {SplashScreen} from './screens/SplashScreen';
-import {OnBoardingScreen} from './screens/OnBoardingScreen';
-const Stack = createNativeStackNavigator();
+const Stack = createStackNavigator();
 
 export default function App() {
-  const [isLoading , setIsLoading ] = useState(false);
-  const [isOnboardingComplete, setisOnboardingComplete] = useState(false);
-
-  if(state.isLoading){
-      return <SplashScreen/>
-  }
-  
   return (
-    <NavigationContainer><Stack.Navigator>
-      { state.isOnboardingComplete ? (
-         <Stack.Screen name = "Profile" component = {ProfileScreen} />
-      ):(
-        <Stack.Screen name = "Onboarding" component = {OnBoardingScreen} />
-      )}
-      
-     
-      </Stack.Navigator>
+    <NavigationContainer>
+      <View style={styles.container}>
+        <LittleLemonHeader />
+        <Stack.Navigator initialRouteName="Login">
+          <Stack.Screen name="Splash" component={SplashScreen} />
+          <Stack.Screen name="Login" component={LoginScreen} />
+          <Stack.Screen name="Menu" component={MenuScreen} />
+          <Stack.Screen name="Subscribe" component={SubscribeScreen} />
+        </Stack.Navigator>
+      </View>
+      <View style={styles.footerContainer}>
+        <LittleLemonFooter />
+      </View>
     </NavigationContainer>
   );
 }
@@ -34,8 +34,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#495E57",
   },
+  footerContainer: { backgroundColor: "#333333" },
 });
