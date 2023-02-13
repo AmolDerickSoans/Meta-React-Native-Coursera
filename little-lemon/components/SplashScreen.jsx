@@ -1,5 +1,5 @@
 import React from "react"
-import React, {useState} from 'react'
+import {useState} from 'react'
 import { View, KeyboardAvoidingView, ScrollView, Text, StyleSheet, Platform, Image, useColorScheme, Pressable } from 'react-native';
 
 
@@ -12,7 +12,7 @@ const SplashScreen = ({navigation})=>{
     return (
           <ScrollView indicatorStyle={'white'} style={[styles.scroll]} keyboardDismissMode='on-drag'>
               <View style={styles.imageAndCaption}>
-                  <Image style={styles.image}  source={require("../img/logo.png")} accessible={true} accessibilityLabel='little lemon logo' />
+                  <Image style={styles.image}  source={require("../assets/Logo.png")} accessible={true} accessibilityLabel='little lemon logo' />
                   <Text style={[styles.welcome, colorScheme === 'light'? {color:darkColor} : {color:lightColor}]}>Little Lemon </Text>
               </View>
               <Text style={[styles.text, colorScheme === 'light'? {color:darkColor} : {color:lightColor}]}>
